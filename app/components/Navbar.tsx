@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className="h-24 flex items-center justify-between">
       {/* LEFT */}
-      <div className="md:hidden">
+      <div className="">
         <Link href={"/"} className="font-bold text-xl text-orange-600">
           ShinCode
         </Link>
@@ -26,20 +26,22 @@ const Navbar = () => {
 
       {/* RIGHT */}
       <div className="">
-        <ClerkLoading>
-          <div
-            className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
-            role="status"
-          ></div>
-        </ClerkLoading>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-        <SignedOut>
-          <div className="text-sm">
-            <Link href={"/sign-in"}>ログイン/新規登録</Link>
-          </div>
-        </SignedOut>
+        <div className="hidden md:flex">
+          <ClerkLoading>
+            <div
+              className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+              role="status"
+            ></div>
+          </ClerkLoading>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <div className="text-sm">
+              <Link href={"/sign-in"}>ログイン/新規登録</Link>
+            </div>
+          </SignedOut>
+        </div>
         <MobileMenu />
       </div>
     </div>
